@@ -8,8 +8,28 @@ Backtrader 中文文档
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
+   chapters/introduction
+   chapters/installation
+   chapters/quick_start_guide
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: 概念
+
+   chapters/concepts/platform_concepts
+   chapters/concepts/operating_the_platform
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Cerebro
+
+   chapters/cerebro/cerebro
+   chapters/cerebro/saving_memory
+   chapters/cerebro/optimization_improvements
+   chapters/cerebro/exceptions
+   chapters/cerebro/writer
 
 
 Indices and tables

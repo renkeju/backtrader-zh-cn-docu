@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>安装 &mdash; Backtrader zh-CN alpha 文档</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="快速开始" href="quick_start_guide.html" />
+    <link rel="prev" title="介绍" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+            <a href="../index.html" class="icon icon-home"> Backtrader zh-CN
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">介绍</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">安装</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">要求和版本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-2-x-3-x">Python 2.x/3.x 兼容性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pypi">从 Pypi 安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pypi-matplotlib">从 Pypi 安装（包括 matplotlib）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">源代码安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#github">Github 项目仓库安装</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start_guide.html">快速开始</a></li>
+</ul>
+<p class="caption"><span class="caption-text">概念</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="concepts/platform_concepts.html">平台概念</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/operating_the_platform.html">操作平台</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cerebro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/saving_memory.html">节省内存</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/optimization_improvements.html">优化改进</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/exceptions.html">意外</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/writer.html">写入</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Backtrader zh-CN</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>安装</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/chapters/installation.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="id1">
+<h1>安装<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<div class="section" id="id2">
+<h2>要求和版本<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p><cite>backtrader</cite> 是独立的安装包，没有外部依赖项（除非您想绘制视图）。</p>
+<p>基本要求是：</p>
+<ul class="simple">
+<li><p>Python 2.7</p></li>
+<li><p>Python 3.2/3.3/3.4./3.5</p></li>
+<li><p>pypy/pypy3</p></li>
+</ul>
+<p>如果您希望有绘图的附加要求：</p>
+<ul class="simple">
+<li><p>Matplotlib &gt;= 1.4.1</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>这个版本可能也适用于以前的版本，但这个版本用于最新的开发的版本。</p>
+</div>
+</div>
+<div class="section" id="python-2-x-3-x">
+<h2>Python 2.x/3.x 兼容性<a class="headerlink" href="#python-2-x-3-x" title="永久链接至标题"></a></h2>
+<p>开发在 Python 2.7 下进行，有时在 3.4 下进行。两个版本都在本地运行测试。</p>
+<p>通过 Travis 下的持续集成检查 3.2/3.3/3.5 和 pypy/pyp3 的兼容性。</p>
+</div>
+<div class="section" id="pypi">
+<h2>从 Pypi 安装<a class="headerlink" href="#pypi" title="永久链接至标题"></a></h2>
+<p>例如使用 pip:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install backtrader
+</pre></div>
+</div>
+<p>也可以使用具有相同作用的easy_install语法。</p>
+</div>
+<div class="section" id="pypi-matplotlib">
+<h2>从 Pypi 安装（包括 matplotlib）<a class="headerlink" href="#pypi-matplotlib" title="永久链接至标题"></a></h2>
+<p>如果需要绘图功能，请使用此功能：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install backtrader<span class="o">[</span>plotting<span class="o">]</span>
+</pre></div>
+</div>
+<p>这会引入 matplotlib，而 matplotlib 又会引入其他依赖项。</p>
+<p>同样，您可能更喜欢（或只能通过……）`easy_install`</p>
+</div>
+<div class="section" id="id3">
+<h2>源代码安装<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<p>首先从 github 站点下载一个版本或最新的压缩包：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/mementum/backtrader">https://github.com/mementum/backtrader</a></p></li>
+</ul>
+<p>解压后运行命令：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python setup.py install
+</pre></div>
+</div>
+</div>
+<div class="section" id="github">
+<h2>Github 项目仓库安装<a class="headerlink" href="#github" title="永久链接至标题"></a></h2>
+<p>从 github 站点仓库下载源代码：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/mementum/backtrader
+<span class="nb">cd</span> backtrader
+python setup.py install
+</pre></div>
+</div>
+<p>请记住，随后需要您手动安装 <cite>matplotlib</cite> 进行绘图。</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="介绍" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="quick_start_guide.html" class="btn btn-neutral float-right" title="快速开始" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, Juju.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

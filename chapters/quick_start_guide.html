@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>快速开始 &mdash; Backtrader zh-CN alpha 文档</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="平台概念" href="concepts/platform_concepts.html" />
+    <link rel="prev" title="安装" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+            <a href="../index.html" class="icon icon-home"> Backtrader zh-CN
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">安装</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">快速开始</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">使用平台</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">从0到1，一个示例</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">基本设置</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">概念</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="concepts/platform_concepts.html">平台概念</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts/operating_the_platform.html">操作平台</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cerebro</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/cerebro.html">Cerebro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/saving_memory.html">节省内存</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/optimization_improvements.html">优化改进</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/exceptions.html">意外</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cerebro/writer.html">写入</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #2980B9" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Backtrader zh-CN</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>快速开始</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/chapters/quick_start_guide.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="id1">
+<h1>快速开始<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>快速入门指南中使用的数据文件会不时更新，这意味着调整后的收盘会发生变化，收盘也会随之变化（以及其他组件）。 这也意味着实际输出可能与撰写本文时文档中的内容不同。</p>
+</div>
+<div class="section" id="id2">
+<h2>使用平台<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<p>让我们通过一系列示例（从几乎空白的示例到完全成熟的策略），但在粗略解释使用 backtrader 之前，有2个基本概念需要提前了解。</p>
+<ol class="arabic">
+<li><p>线</p>
+<blockquote>
+<div><p>数据流、指标和策略都有线。</p>
+<p>一条线是一连串点，当它们连接在一起形成这条线时。在谈论市场时，数据流通常每天具有以下一组点：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>开盘价、最高价、最低价、收盘价、成交量、未平仓。</p></li>
+</ul>
+</div></blockquote>
+<p>一连串的“开盘价”是一条线。因此，数据流通常有6行。如果我们还考虑“DateTime”（这是单个点的实际参考），我们可以数7行。</p>
+</div></blockquote>
+</li>
+<li><p>索引0的方法</p>
+<blockquote>
+<div><p>访问一行中的值时，使用索引访问当前值：0</p>
+<p>“最后一个”输出值使用-1访问。这符合可迭代对象的Python约定（并且一行可以被迭代，因此是一个可迭代对象），其中索引-1用于访问可迭代对象/数组的“最后一个”项。</p>
+<p>在我们的例子中是被访问的最后一个输出值。</p>
+<p>因此，在索引-1之后即为索引0，它用于访问当前的时刻。</p>
+</div></blockquote>
+</li>
+</ol>
+<p>考虑到这一点，如果我们想象一个具有在初始化期间创建的简单移动平均线的策略：</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">sma</span> <span class="o">=</span> <span class="n">SimpleMovingAverage</span><span class="p">(</span><span class="o">.....</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>访问此移动平均线当前值的最简单和最简单的方法：</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">av</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sma</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>因此无需知道已处理了多少k线/分钟/天/月，因为“0”唯一标识是当前时刻。</p>
+<p>按照 pythonic 传统，使用 -1 访问“最后一个”输出值：</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">previous_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sma</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>当然更早的输出值可以用-2,-3,…依此类推。</p>
+</div>
+<div class="section" id="id3">
+<h2>从0到1，一个示例<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+<div class="section" id="id4">
+<h3>基本设置<a class="headerlink" href="#id4" title="永久链接至标题"></a></h3>
+<p>让我们开始吧。</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="p">(</span><span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span>
+                        <span class="n">unicode_literals</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">backtrader</span> <span class="k">as</span> <span class="nn">bt</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">cerebro</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">Cerebro</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Starting Portfolio Value: </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
+
+    <span class="n">cerebro</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Final Portfolio Value: </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">cerebro</span><span class="o">.</span><span class="n">broker</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="安装" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="concepts/platform_concepts.html" class="btn btn-neutral float-right" title="平台概念" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, Juju.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
